@@ -3,14 +3,17 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#0a2744" />
   <title>Evergreen Medical Center</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,600;0,700;0,800;1,600;1,700&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <header class="site-header">
+  <div class="scroll-progress" id="scroll-progress"></div>
+
+  <header class="site-header" id="site-header">
     <div class="container header-inner">
       <a href="#hero" class="brand">
         <span class="brand-mark">E</span>
@@ -19,14 +22,19 @@
           <small>Medical Center</small>
         </span>
       </a>
-      <nav class="site-nav" aria-label="Primary navigation">
+      <nav class="site-nav" id="site-nav" aria-label="Primary navigation">
         <a href="#about">About</a>
         <a href="#services">Services</a>
         <a href="#doctors">Doctors</a>
         <a href="#appointments">Appointment</a>
         <a href="#contact">Contact</a>
       </nav>
-      <a href="#appointments" class="btn btn-primary nav-cta">Book Appointment</a>
+      <div class="header-right">
+        <a href="#appointments" class="btn btn-primary nav-cta">Book Appointment</a>
+        <button class="menu-toggle" id="menu-toggle" aria-label="メニューを開く" aria-expanded="false">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
     </div>
   </header>
 
@@ -35,51 +43,62 @@
       <div class="hero-overlay"></div>
       <div class="container hero-content">
         <div class="hero-copy">
-          <span class="eyebrow">Premium Healthcare</span>
-          <h1>Modern Care for Everyday Life</h1>
-          <p>「先進的な医療設備と、患者さま一人ひとりに寄り添う丁寧な診療で、毎日の健康をサポートします。」</p>
+          <span class="eyebrow">Premium Healthcare &middot; Los Angeles</span>
+          <h1>Exceptional Care<br><em>for Every Life</em></h1>
+          <p>先進的な医療設備と、患者さま一人ひとりに寄り添う丁寧な診療で、毎日の健康をサポートします。</p>
           <div class="hero-actions">
-            <a href="#appointments" class="btn btn-primary">Book Appointment</a>
-            <a href="#services" class="btn btn-secondary">Our Services</a>
+            <a href="#appointments" class="btn btn-gold">Book Appointment</a>
+            <a href="#services" class="btn btn-outline-white">Our Services</a>
           </div>
         </div>
-        <div class="hero-card glass-card">
-          <div class="hero-card-title">Care with Clarity</div>
-          <p>専門医と看護チームが連携し、安心して相談できる医療体験を提供します。</p>
+        <div class="hero-card">
+          <div class="hero-card-label">Why Choose Us</div>
+          <p class="hero-card-desc">専門医と看護チームが連携し、安心して相談できる医療体験を提供します。</p>
           <div class="hero-stats">
-            <div>
-              <strong>20,000+</strong>
+            <div class="hero-stat">
+              <strong>20K+</strong>
               <span>Patients served</span>
             </div>
-            <div>
+            <div class="hero-stat">
               <strong>98%</strong>
-              <span>Patient satisfaction</span>
+              <span>Satisfaction</span>
+            </div>
+            <div class="hero-stat">
+              <strong>15+</strong>
+              <span>Years of care</span>
             </div>
           </div>
+          <a href="#appointments" class="btn btn-gold btn-full">今すぐ予約する &rarr;</a>
         </div>
       </div>
+      <a href="#about" class="hero-scroll-hint" aria-label="下へスクロール">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M12 5v14M5 12l7 7 7-7"/>
+        </svg>
+      </a>
     </section>
 
     <section id="about" class="section about-section">
       <div class="container section-grid">
         <div class="section-intro">
           <p class="section-label">About Evergreen</p>
-          <h2>信頼と安心の医療体験</h2>
+          <h2>信頼と安心の<br>医療体験</h2>
           <p>Evergreen Medical Centerは、アメリカの先進的な医療スタイルをイメージした、清潔感と安心感のあるクリニックです。予防医療から日常的な体調不良まで、患者さま一人ひとりに寄り添った医療サービスを提供します。</p>
+          <a href="#services" class="btn btn-primary" style="margin-top:1.5rem;">サービスを見る</a>
         </div>
         <div class="stats-grid">
-          <article class="stat-card glass-card">
-            <strong>15+</strong>
+          <article class="stat-card">
+            <div class="stat-number">15+</div>
             <h3>Years Experience</h3>
             <p>長年の実績を積んだ医師と看護師が、信頼できる診療を支えます。</p>
           </article>
-          <article class="stat-card glass-card">
-            <strong>20,000+</strong>
+          <article class="stat-card">
+            <div class="stat-number">20,000+</div>
             <h3>Patients Served</h3>
             <p>多くの患者さまに選ばれ続ける、丁寧な診療と総合ケア。</p>
           </article>
-          <article class="stat-card glass-card">
-            <strong>98%</strong>
+          <article class="stat-card stat-accent">
+            <div class="stat-number">98%</div>
             <h3>Patient Satisfaction</h3>
             <p>安心感とわかりやすさを重視した、満足度の高い診療。</p>
           </article>
@@ -89,39 +108,39 @@
 
     <section id="services" class="section services-section">
       <div class="container">
-        <div class="section-head">
+        <div class="section-head centered">
           <p class="section-label">Our Services</p>
           <h2>包括的な医療サービス</h2>
-          <p>日常の健康管理から予防医療まで、現代のライフスタイルに合わせた柔軟なサポートを提供します。</p>
+          <p class="section-lead">日常の健康管理から予防医療まで、現代のライフスタイルに合わせた柔軟なサポートを提供します。</p>
         </div>
         <div class="services-grid">
-          <article class="service-card glass-card">
-            <div class="service-icon">🏥</div>
+          <article class="service-card">
+            <div class="service-icon icon-navy">🏥</div>
             <h3>Primary Care</h3>
             <p>発熱・頭痛・腹痛など、日常的な体調不良に幅広く対応します。</p>
           </article>
-          <article class="service-card glass-card">
-            <div class="service-icon">👨‍👩‍👧‍👦</div>
+          <article class="service-card">
+            <div class="service-icon icon-teal">👨‍👩‍👧‍👦</div>
             <h3>Family Medicine</h3>
             <p>お子さまからご高齢の方まで、ご家族全体の健康を継続的にサポートします。</p>
           </article>
-          <article class="service-card glass-card">
-            <div class="service-icon">🩺</div>
+          <article class="service-card">
+            <div class="service-icon icon-sky">🩺</div>
             <h3>Preventive Care</h3>
             <p>病気の早期発見と予防を目的に、定期的な健康管理を行います。</p>
           </article>
-          <article class="service-card glass-card">
-            <div class="service-icon">💻</div>
+          <article class="service-card">
+            <div class="service-icon icon-navy">💻</div>
             <h3>Telehealth</h3>
             <p>オンライン診療を想定した、利便性の高い医療サービスです。</p>
           </article>
-          <article class="service-card glass-card">
-            <div class="service-icon">💉</div>
+          <article class="service-card">
+            <div class="service-icon icon-teal">💉</div>
             <h3>Vaccinations</h3>
             <p>ライフステージに応じた各種予防接種に対応します。</p>
           </article>
-          <article class="service-card glass-card">
-            <div class="service-icon">🧾</div>
+          <article class="service-card">
+            <div class="service-icon icon-sky">🧾</div>
             <h3>Health Checkups</h3>
             <p>健康診断や検査を通じて健康状態を分かりやすく確認できます。</p>
           </article>
@@ -131,34 +150,43 @@
 
     <section id="doctors" class="section doctors-section">
       <div class="container">
-        <div class="section-head">
+        <div class="section-head centered">
           <p class="section-label">Meet Our Doctors</p>
           <h2>信頼できる医療チーム</h2>
-          <p>専門性と温かさを兼ね備えた医師陣が、丁寧に対応いたします。</p>
+          <p class="section-lead">専門性と温かさを兼ね備えた医師陣が、丁寧に対応いたします。</p>
         </div>
         <div class="doctors-grid">
-          <article class="doctor-card glass-card">
-            <img src="images/doctor-emily-carter.jpg" alt="Dr. Emily Carter" />
+          <article class="doctor-card">
+            <div class="doctor-photo">
+              <img src="images/doctor-emily-carter.jpg" alt="Dr. Emily Carter" />
+              <div class="doctor-badge">Internal Medicine</div>
+            </div>
             <div class="doctor-content">
               <h3>Dr. Emily Carter</h3>
-              <span>Internal Medicine</span>
               <p>内科診療を中心に、患者さまの小さな不調にも丁寧に向き合う医師です。</p>
+              <a href="#appointments" class="btn-link">予約する &rarr;</a>
             </div>
           </article>
-          <article class="doctor-card glass-card">
-            <img src="https://images.unsplash.com/photo-1544717305-2782549b5136?auto=format&fit=crop&w=800&q=80" alt="Dr. Michael Adams" />
+          <article class="doctor-card">
+            <div class="doctor-photo">
+              <img src="https://images.unsplash.com/photo-1544717305-2782549b5136?auto=format&fit=crop&w=800&q=80" alt="Dr. Michael Adams" />
+              <div class="doctor-badge">Family Medicine</div>
+            </div>
             <div class="doctor-content">
               <h3>Dr. Michael Adams</h3>
-              <span>Family Medicine</span>
               <p>ご家族全体の健康管理を得意とし、継続的なケアを提供します。</p>
+              <a href="#appointments" class="btn-link">予約する &rarr;</a>
             </div>
           </article>
-          <article class="doctor-card glass-card">
-            <img src="images/dr-sophia-bennett.jpg" alt="Dr. Sophia Bennett" />
+          <article class="doctor-card">
+            <div class="doctor-photo">
+              <img src="images/dr-sophia-bennett.jpg" alt="Dr. Sophia Bennett" />
+              <div class="doctor-badge">Preventive Care</div>
+            </div>
             <div class="doctor-content">
               <h3>Dr. Sophia Bennett</h3>
-              <span>Preventive Care</span>
               <p>予防医療と健康管理を専門とし、健康な毎日をサポートします。</p>
+              <a href="#appointments" class="btn-link">予約する &rarr;</a>
             </div>
           </article>
         </div>
@@ -166,26 +194,30 @@
     </section>
 
     <section class="section why-section">
-      <div class="container section-grid reverse-grid">
-        <div class="section-intro">
+      <div class="container">
+        <div class="section-head centered">
           <p class="section-label">Why Patients Choose Us</p>
           <h2>選ばれる理由</h2>
-          <p>安心感のある診療環境と、患者さまの生活に溶け込むケアを大切にしています。</p>
+          <p class="section-lead">安心感のある診療環境と、患者さまの生活に溶け込むケアを大切にしています。</p>
         </div>
         <div class="features-grid">
-          <article class="feature-card glass-card">
+          <article class="feature-card">
+            <div class="feature-num">01</div>
             <h3>Experienced Physicians</h3>
             <p>経験豊富な医師による安心感のある診療</p>
           </article>
-          <article class="feature-card glass-card">
+          <article class="feature-card">
+            <div class="feature-num">02</div>
             <h3>Advanced Technology</h3>
             <p>先進的な医療設備をイメージした信頼感ある医療環境</p>
           </article>
-          <article class="feature-card glass-card">
+          <article class="feature-card">
+            <div class="feature-num">03</div>
             <h3>Personalized Care</h3>
             <p>一人ひとりの悩みに寄り添う丁寧な対応</p>
           </article>
-          <article class="feature-card glass-card">
+          <article class="feature-card">
+            <div class="feature-num">04</div>
             <h3>Easy Online Booking</h3>
             <p>スマートフォンから簡単に予約できる導線設計</p>
           </article>
@@ -195,23 +227,35 @@
 
     <section class="section testimonials-section">
       <div class="container">
-        <div class="section-head">
+        <div class="section-head centered">
           <p class="section-label">Patient Stories</p>
           <h2>患者さまの声</h2>
-          <p>信頼と安心が伝わる、実際の診療体験をご紹介します。</p>
+          <p class="section-lead">信頼と安心が伝わる、実際の診療体験をご紹介します。</p>
         </div>
         <div class="testimonials-grid">
-          <article class="testimonial-card glass-card">
-            <p>「院内は清潔感があり、受付から診察までとてもスムーズでした。説明も分かりやすく、安心して相談できました。」</p>
-            <strong>女性 34歳</strong>
+          <article class="testimonial-card">
+            <div class="testimonial-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+            <blockquote>「院内は清潔感があり、受付から診察までとてもスムーズでした。説明も分かりやすく、安心して相談できました。」</blockquote>
+            <footer class="testimonial-author">
+              <strong>女性 34歳</strong>
+              <span>Primary Care</span>
+            </footer>
           </article>
-          <article class="testimonial-card glass-card">
-            <p>「家族で安心して通える雰囲気があり、スタッフの対応も丁寧でした。」</p>
-            <strong>男性 45歳</strong>
+          <article class="testimonial-card">
+            <div class="testimonial-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+            <blockquote>「家族で安心して通える雰囲気があり、スタッフの対応も丁寧でした。」</blockquote>
+            <footer class="testimonial-author">
+              <strong>男性 45歳</strong>
+              <span>Family Medicine</span>
+            </footer>
           </article>
-          <article class="testimonial-card glass-card">
-            <p>「オンライン予約が使いやすく、忙しい日でも受診しやすかったです。」</p>
-            <strong>女性 28歳</strong>
+          <article class="testimonial-card">
+            <div class="testimonial-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+            <blockquote>「オンライン予約が使いやすく、忙しい日でも受診しやすかったです。」</blockquote>
+            <footer class="testimonial-author">
+              <strong>女性 28歳</strong>
+              <span>Telehealth</span>
+            </footer>
           </article>
         </div>
       </div>
@@ -221,21 +265,39 @@
       <div class="container appointment-grid">
         <div class="appointment-copy">
           <p class="section-label">Book Appointment</p>
-          <h2>診療予約・ご相談</h2>
+          <h2>診療予約・<br>ご相談</h2>
           <p>診療のご相談やご予約は、下記フォームよりお気軽にお問い合わせください。内容を確認後、担当スタッフよりご連絡いたします。</p>
+          <div class="appt-info">
+            <div class="appt-info-item">
+              <span class="appt-info-icon">📞</span>
+              <div>
+                <strong>電話での予約</strong>
+                <span>+1 310-555-0198</span>
+              </div>
+            </div>
+            <div class="appt-info-item">
+              <span class="appt-info-icon">⏰</span>
+              <div>
+                <strong>診療時間</strong>
+                <span>平日 9:00〜18:00 &nbsp;|&nbsp; 土曜 9:00〜13:00</span>
+              </div>
+            </div>
+          </div>
         </div>
-        <form class="appointment-form glass-card" id="appointment-form">
-          <label>
-            <span>Name</span>
-            <input type="text" name="name" placeholder="Your full name" required />
-          </label>
+        <form class="appointment-form" id="appointment-form">
+          <div class="form-row">
+            <label>
+              <span>Name</span>
+              <input type="text" name="name" placeholder="Your full name" required />
+            </label>
+            <label>
+              <span>Phone</span>
+              <input type="tel" name="phone" placeholder="+1 310-555-0198" required />
+            </label>
+          </div>
           <label>
             <span>Email</span>
             <input type="email" name="email" placeholder="you@example.com" required />
-          </label>
-          <label>
-            <span>Phone</span>
-            <input type="tel" name="phone" placeholder="+1 310-555-0198" required />
           </label>
           <label>
             <span>Preferred Date</span>
@@ -245,7 +307,7 @@
             <span>Message</span>
             <textarea name="message" rows="4" placeholder="ご相談内容をお書きください"></textarea>
           </label>
-          <button type="submit" class="btn btn-primary">Submit Request</button>
+          <button type="submit" class="btn btn-primary btn-full">予約リクエストを送信</button>
           <p class="form-note">* 送信後、担当者より確認のご連絡を差し上げます。</p>
         </form>
       </div>
@@ -259,23 +321,25 @@
           <p>診療時間内であれば、お電話でのご相談も受け付けています。アクセスしやすく、安心して通えるクリニックを目指しています。</p>
         </div>
         <div class="contact-cards">
-          <article class="contact-card glass-card">
+          <article class="contact-card">
+            <div class="contact-icon">📍</div>
             <h3>Address</h3>
-            <p>123 Wellness Avenue, Los Angeles, CA</p>
+            <p>123 Wellness Avenue,<br>Los Angeles, CA</p>
           </article>
-          <article class="contact-card glass-card">
+          <article class="contact-card">
+            <div class="contact-icon">📞</div>
             <h3>Phone</h3>
             <p>+1 310-555-0198</p>
           </article>
-          <article class="contact-card glass-card">
+          <article class="contact-card">
+            <div class="contact-icon">✉️</div>
             <h3>Email</h3>
             <p>contact@evergreenmedical.com</p>
           </article>
-          <article class="contact-card glass-card">
+          <article class="contact-card">
+            <div class="contact-icon">⏰</div>
             <h3>Hours</h3>
-            <p>Monday - Friday: 9:00 AM - 6:00 PM</p>
-            <p>Saturday: 9:00 AM - 1:00 PM</p>
-            <p>Sunday: Closed</p>
+            <p>Mon – Fri: 9:00 AM – 6:00 PM<br>Saturday: 9:00 AM – 1:00 PM<br>Sunday: Closed</p>
           </article>
         </div>
       </div>
@@ -284,18 +348,33 @@
 
   <footer class="site-footer">
     <div class="container footer-grid">
-      <div>
-        <strong>Evergreen Medical Center</strong>
+      <div class="footer-brand">
+        <a href="#hero" class="brand">
+          <span class="brand-mark">E</span>
+          <span>
+            <strong>Evergreen</strong>
+            <small>Medical Center</small>
+          </span>
+        </a>
         <p>Evergreen Medical Centerは、現代的で信頼感のある医療体験を提供するクリニックサイトのコンセプトデザインです。</p>
       </div>
       <div class="footer-links">
+        <h4>Quick Links</h4>
+        <a href="#about">About Us</a>
+        <a href="#services">Services</a>
+        <a href="#doctors">Doctors</a>
+        <a href="#appointments">Appointments</a>
+      </div>
+      <div class="footer-links">
+        <h4>Legal</h4>
         <a href="#">Privacy Policy</a>
         <a href="#">Terms of Service</a>
       </div>
-      <div class="social-links">
-        <a href="#" aria-label="Facebook">Facebook</a>
-        <a href="#" aria-label="Instagram">Instagram</a>
-        <a href="#" aria-label="LinkedIn">LinkedIn</a>
+      <div class="footer-links">
+        <h4>Follow Us</h4>
+        <a href="#">Facebook</a>
+        <a href="#">Instagram</a>
+        <a href="#">LinkedIn</a>
       </div>
     </div>
     <div class="footer-bottom">
