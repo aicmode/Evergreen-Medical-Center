@@ -285,30 +285,41 @@
           </div>
         </div>
         <form class="appointment-form" id="appointment-form">
-          <div class="form-row">
-            <label>
-              <span>Name</span>
-              <input type="text" name="name" placeholder="Your full name" required />
-            </label>
-            <label>
-              <span>Phone</span>
-              <input type="tel" name="phone" placeholder="+1 310-555-0198" required />
-            </label>
+          <div class="form-header">
+            <h3>予約リクエスト</h3>
+            <p>内容を確認後、担当スタッフよりご連絡いたします。</p>
           </div>
-          <label>
-            <span>Email</span>
-            <input type="email" name="email" placeholder="you@example.com" required />
-          </label>
-          <label>
-            <span>Preferred Date</span>
-            <input type="date" name="date" required />
-          </label>
-          <label>
-            <span>Message</span>
-            <textarea name="message" rows="4" placeholder="ご相談内容をお書きください"></textarea>
-          </label>
-          <button type="submit" class="btn btn-primary btn-full">予約リクエストを送信</button>
-          <p class="form-note">* 送信後、担当者より確認のご連絡を差し上げます。</p>
+          <div class="form-fields">
+            <div class="form-row">
+              <label>
+                <span>Name</span>
+                <input type="text" name="name" placeholder="Your full name" required />
+              </label>
+              <label>
+                <span>Phone</span>
+                <input type="tel" name="phone" placeholder="+1 310-555-0198" required />
+              </label>
+            </div>
+            <label>
+              <span>Email</span>
+              <input type="email" name="email" placeholder="you@example.com" required />
+            </label>
+            <label>
+              <span>Preferred Date</span>
+              <input type="date" name="date" required />
+            </label>
+            <label>
+              <span>Message</span>
+              <textarea name="message" rows="4" placeholder="ご相談内容をお書きください"></textarea>
+            </label>
+            <button type="submit" class="btn btn-primary btn-full">予約リクエストを送信 &rarr;</button>
+            <div class="form-trust">
+              <span class="form-trust-item">🔒 Secure &amp; Private</span>
+              <span class="form-trust-item">✓ Board Certified</span>
+              <span class="form-trust-item">✓ 24h Response</span>
+            </div>
+            <p class="form-note">* 送信後、担当者より確認のご連絡を差し上げます。</p>
+          </div>
         </form>
       </div>
     </section>
