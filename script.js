@@ -1,12 +1,16 @@
 // Scroll progress bar
 const progress = document.getElementById('scroll-progress');
 const header = document.getElementById('site-header');
+const hero = document.getElementById('hero');
+const heroCard = document.querySelector('.hero-card');
 
 function updateScroll() {
   const scrollTop = window.scrollY;
   const docHeight = document.documentElement.scrollHeight - window.innerHeight;
   if (progress) progress.style.width = (docHeight > 0 ? (scrollTop / docHeight) * 100 : 0) + '%';
   if (header) header.classList.toggle('scrolled', scrollTop > 24);
+  if (hero) hero.style.setProperty('--hero-parallax', Math.min(scrollTop * 0.08, 34) + 'px');
+  if (heroCard) heroCard.style.setProperty('--hero-card-shift', Math.min(scrollTop * 0.025, 14) + 'px');
 }
 window.addEventListener('scroll', updateScroll, { passive: true });
 updateScroll();
@@ -43,10 +47,10 @@ const observer = new IntersectionObserver(
 );
 
 document.querySelectorAll(
-  '.service-card, .doctor-card, .feature-card, .testimonial-card, .stat-card, .contact-card'
+  '.hero-copy, .hero-card, .service-card, .doctor-card, .feature-card, .testimonial-card, .stat-card, .contact-card, .appointment-copy, .appointment-form, .appt-info-item'
 ).forEach((el, i) => {
   el.classList.add('animate-on-scroll');
-  el.style.transitionDelay = (i % 3) * 0.08 + 's';
+  el.style.transitionDelay = (i % 4) * 0.07 + 's';
   observer.observe(el);
 });
 
